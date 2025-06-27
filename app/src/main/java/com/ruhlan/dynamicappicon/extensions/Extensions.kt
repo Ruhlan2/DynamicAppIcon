@@ -16,7 +16,7 @@ fun Activity.changeEnabledComponent(
     packageManager.setComponentEnabledSetting(
         ComponentName(
             this,
-            enabled
+            "${packageName}.${enabled}"
         ),
         PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
         PackageManager.DONT_KILL_APP
@@ -25,7 +25,7 @@ fun Activity.changeEnabledComponent(
     packageManager.setComponentEnabledSetting(
         ComponentName(
             this,
-            disabled
+            "${packageName}.${disabled}"
         ),
         PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
         PackageManager.DONT_KILL_APP
